@@ -1,0 +1,441 @@
+{
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.12"
+  },
+  "name": "",
+  "signature": "sha256:1be1e4b0eb3db39d28e05ad0d1f25a8202213c89c6fd4991502b9e170804820c"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f \u043f\u0440\u0435\u0434\u0441\u043a\u0430\u0437\u0430\u0442\u044c \u043d\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u043f\u043e\u0441\u043b\u0435 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430, \u0430 \u0447\u0430\u0441\u0442\u044c \u0438\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0434\u0430\u043d\u043d\u044b\u0445, \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u043d\u044b\u0445 \u0441\u0438\u043b\u043e\u0439 \u0440\u0430\u043d\u0434\u043e\u043c\u0430, \u043f\u043e \u043f\u0435\u0440\u0435\u043c\u0435\u043d\u043d\u043e\u0439 City, \u0442\u0430\u043a \u043a\u0430\u043a \u0433\u0438\u0441\u0442\u043e\u0433\u0440\u0430\u043c\u043c\u044b \u0438\u0445 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u044f \u0441\u0445\u043e\u0436\u0438. \u041f\u0440\u043e\u043f\u0443\u0441\u043a\u0438 \u0432 \u0434\u0430\u043d\u043d\u044b\u0445 \u043e\u0442\u0441\u0443\u0442\u0432\u0443\u044e\u0442.\n",
+      "\n",
+      "\u0422\u0430\u043a \u043a\u0430\u043a dodopizza \u043e\u0442\u043a\u0440\u044b\u043b\u043e\u0441\u044c 5 \u043b\u0435\u0442 \u043d\u0430\u0437\u0430\u0434, \u0438 \u043d\u0430\u043c \u0434\u0430\u043d\u043d\u0430 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0437\u0430 \u044d\u0442\u043e\u0442 \u043f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u043a, \u0435\u0441\u0442\u044c \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0435, \u0447\u0442\u043e \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0435 \u0430\u043d\u0430\u043d\u0438\u043c\u0438\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\n",
+      "\n",
+      "\u041c\u043e\u0436\u043d\u043e \u043f\u043e\u0438\u0433\u0440\u0430\u0442\u044c\u0441\u044f \u0441 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0430\u043c\u0438, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u043c\u0438 \u0441 \u0433\u0435\u043e\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u043c \u043c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u043c - \u043f\u0440\u0438\u0434\u0435\u0442\u0441\u044f \u0432\u044b\u0447\u0435\u0441\u043b\u0438\u0442\u044c \u0432\u0440\u0443\u0447\u043d\u0443\u044e \u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043a\u0430\u0436\u0434\u043e\u0433\u043e \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430. \u0422\u0430\u043a \u043a\u0430\u043a \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432, \u043a\u0430\u043a \u043f\u0440\u0430\u0432\u0438\u043b\u043e \u043c\u0435\u043d\u044c\u0448\u0435 3, \u0442\u043e \u043f\u043e \u043c\u043e\u043c\u0435\u043d\u0442\u0443 \u043d\u0430\u0447\u0430\u043b\u0430 \u043f\u0440\u043e\u0434\u0430\u0436, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0432\u044b\u0447\u0438\u0441\u043b\u0438\u0442\u044c \u043c\u043e\u043c\u0435\u043d\u0442 \u043e\u0442\u043a\u0440\u044b\u0442\u0438\u044f \u0438 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435.\n",
+      "\n",
+      "\u041f\u0440\u0435\u0434\u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043c\u043e\u0436\u043d\u043e \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0434\u0430\u043d\u043d\u044b\u0435 - \u043a\u0443\u0440\u0441 \u0434\u043e\u043b\u043b\u0430\u0440\u0430, \u043f\u043e\u0433\u043e\u0434\u043d\u044b\u0435 \u0443\u0441\u043b\u043e\u0432\u0438\u044f, knn \u0434\u043e [1, n] \u0441\u043e\u0441\u0435\u0434\u044f\u043c, \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043e\u0442 \u0443\u0441\u043b\u043e\u0432\u043d\u043e\u0433\u043e \u0446\u0435\u043d\u0442\u0440\u0430 \u0433\u043e\u0440\u043e\u0434\u0430 \u0438\u043b\u0438 \u043a\u0430\u043a\u0438\u043c-\u043b\u0438\u0431\u043e \u0434\u0440\u0443\u0433\u0438\u043c \u043e\u0431\u0440\u0430\u0437\u043e\u043c \u043e\u0446\u0435\u043d\u0435\u043d\u043d\u043e\u0435 \u043c\u0435\u0441\u0442\u043e\u043f\u043e\u043b\u043e\u0436\u0435\u043d\u0438\u0435, \u0441\u043a\u043e\u043b\u044c\u0437\u044f\u0449\u0435\u0435 \u0441\u0440\u0435\u0434\u043d\u0435\u0435\n",
+      "\n",
+      "\u0414\u0438\u0430\u043f\u0430\u0437\u043e\u043d \u0432\u0440\u0435\u043c\u0435\u043d\u0438  train: 6.10.2011 - 9.9.2016, test: 14.12.2011 - 4.9.2016, \u0442\u043e \u0435\u0441\u0442\u044c \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434 \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u043b\u0435\u0436\u0438\u0442 \u0432\u043d\u0443\u0442\u0440\u0438 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u043e\u0433\u043e\n",
+      "\n",
+      "\u041c\u0435\u0442\u0440\u0438\u043a\u0430 \u043e\u0446\u0435\u043d\u0438\u0432\u0430\u043d\u0438\u044f \u0440\u0435\u0448\u0435\u043d\u0438\u044f MAE"
+     ]
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import pandas as pd\n",
+      "import numpy as np"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "train = pd.read_csv(\"train.csv\", header=None)\n",
+      "test = pd.read_csv(\"test.csv\", header=None)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "train.columns = [\"Day\", \"Month\", \"Year\", \"City\", \"Count\"]\n",
+      "test.columns = [\"Day\", \"Month\", \"Year\", \"City\"]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "#6 \u0433\u043e\u0440\u043e\u0434\u043e\u0432 \u043e\u0442\u0441\u0443\u0442\u0432\u0443\u044e\u0442 \u0432 \u0442\u0435\u0441\u0442\u043e\u0432\u043e\u0439 \u0432\u044b\u0431\u043e\u0440\u043a\u0435 - \u0443\u0434\u0430\u043b\u0438\u043c \u0438\u0445 \u0438\u0437 \u0442\u0440\u0435\u043d\u0438\u0440\u043e\u0432\u043e\u0447\u043d\u043e\u0439\n",
+      "print len(train.City.unique())\n",
+      "print len(test.City.unique())\n",
+      "a = set(train.City.unique()) - (set(train.City.unique()) & set(test.City.unique()))\n",
+      "for i in a:\n",
+      "    print i\n",
+      "    train = train[train.City != i]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "120\n",
+        "114\n",
+        "\u0422\u0440\u043e\u0438\u0446\u043a-1\n",
+        "\u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a-\u043d\u0430-\u0410\u043c\u0443\u0440\u0435-2\n",
+        "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440-1\n",
+        "\u041a\u043e\u043b\u043e\u043c\u043d\u0430-1\n",
+        "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440-2\n",
+        "\u041a\u0438\u0440\u043e\u0432-1"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n"
+       ]
+      }
+     ],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "s1 = train.City\n",
+      "s2 = test.City\n",
+      "d = pd.DataFrame({'s1': s1, 's2': s2})\n",
+      "d.apply(pd.value_counts).plot(kind='bar', subplots=True)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 5,
+       "text": [
+        "array([<matplotlib.axes._subplots.AxesSubplot object at 0xab8de6ac>,\n",
+        "       <matplotlib.axes._subplots.AxesSubplot object at 0xab9d250c>], dtype=object)"
+       ]
+      }
+     ],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "trainDummy = pd.get_dummies(train, columns=['City'])"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "from sklearn.ensemble import RandomForestRegressor\n",
+      "from sklearn.cross_validation import KFold\n",
+      "from sklearn.metrics import mean_absolute_error as mae\n",
+      "from sklearn.ensemble import GradientBoostingRegressor"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 70
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "\"Day\", \"Month\", \"Year\", \"Count\""
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 80,
+       "text": [
+        "('Day', 'Month', 'Year', 'Count')"
+       ]
+      }
+     ],
+     "prompt_number": 80
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "c = train.columns.difference(['City'])\n",
+      "trainNew = pd.merge(train[c], trainDummy)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 83
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "model = RandomForestRegressor()\n",
+      "c = trainNew.columns.difference(['Count'])\n",
+      "countFold = 5\n",
+      "kf = KFold(len(trainNew), n_folds=countFold, shuffle=True)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 108
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "X_train = 0\n",
+      "y_train = 0\n",
+      "X_test = 0\n",
+      "y_test = 0\n",
+      "pred = 0\n",
+      "meanMae = 0\n",
+      "for train_index, test_index in kf:\n",
+      "    X_train, X_test = trainNew[c].loc[train_index], trainNew[c].loc[test_index]\n",
+      "    y_train, y_test = trainNew['Count'].loc[train_index], trainNew['Count'].loc[test_index]\n",
+      "    model.fit(X_train.as_matrix(), y_train.as_matrix())\n",
+      "    pred = model.predict(X_test)\n",
+      "    print mae(pred, y_test)\n",
+      "    meanMae += mae(pred, y_test)\n",
+      "meanMae /= countFold"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "19.8937063498\n",
+        "20.0024082845"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "20.193842325"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "19.0624438022"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n",
+        "19.8433044316"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "\n"
+       ]
+      }
+     ],
+     "prompt_number": 109
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "meanMae"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 110,
+       "text": [
+        "19.799141038621798"
+       ]
+      }
+     ],
+     "prompt_number": 110
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "train.describe()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "html": [
+        "<div style=\"max-width:1500px;overflow:auto;\">\n",
+        "<table border=\"1\" class=\"dataframe\">\n",
+        "  <thead>\n",
+        "    <tr style=\"text-align: right;\">\n",
+        "      <th></th>\n",
+        "      <th>Day</th>\n",
+        "      <th>Month</th>\n",
+        "      <th>Year</th>\n",
+        "      <th>Count</th>\n",
+        "    </tr>\n",
+        "  </thead>\n",
+        "  <tbody>\n",
+        "    <tr>\n",
+        "      <th>count</th>\n",
+        "      <td>46048.000000</td>\n",
+        "      <td>46048.000000</td>\n",
+        "      <td>46048.000000</td>\n",
+        "      <td>46048.000000</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>mean</th>\n",
+        "      <td>15.455916</td>\n",
+        "      <td>6.606888</td>\n",
+        "      <td>2015.200595</td>\n",
+        "      <td>106.113447</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>std</th>\n",
+        "      <td>8.732700</td>\n",
+        "      <td>3.191562</td>\n",
+        "      <td>1.008963</td>\n",
+        "      <td>76.608338</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>min</th>\n",
+        "      <td>1.000000</td>\n",
+        "      <td>1.000000</td>\n",
+        "      <td>2011.000000</td>\n",
+        "      <td>1.000000</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>25%</th>\n",
+        "      <td>8.000000</td>\n",
+        "      <td>4.000000</td>\n",
+        "      <td>2015.000000</td>\n",
+        "      <td>55.000000</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>50%</th>\n",
+        "      <td>15.000000</td>\n",
+        "      <td>7.000000</td>\n",
+        "      <td>2016.000000</td>\n",
+        "      <td>87.000000</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>75%</th>\n",
+        "      <td>23.000000</td>\n",
+        "      <td>9.000000</td>\n",
+        "      <td>2016.000000</td>\n",
+        "      <td>135.000000</td>\n",
+        "    </tr>\n",
+        "    <tr>\n",
+        "      <th>max</th>\n",
+        "      <td>31.000000</td>\n",
+        "      <td>12.000000</td>\n",
+        "      <td>2016.000000</td>\n",
+        "      <td>2044.000000</td>\n",
+        "    </tr>\n",
+        "  </tbody>\n",
+        "</table>\n",
+        "</div>"
+       ],
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 103,
+       "text": [
+        "                Day         Month          Year         Count\n",
+        "count  46048.000000  46048.000000  46048.000000  46048.000000\n",
+        "mean      15.455916      6.606888   2015.200595    106.113447\n",
+        "std        8.732700      3.191562      1.008963     76.608338\n",
+        "min        1.000000      1.000000   2011.000000      1.000000\n",
+        "25%        8.000000      4.000000   2015.000000     55.000000\n",
+        "50%       15.000000      7.000000   2016.000000     87.000000\n",
+        "75%       23.000000      9.000000   2016.000000    135.000000\n",
+        "max       31.000000     12.000000   2016.000000   2044.000000"
+       ]
+      }
+     ],
+     "prompt_number": 103
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "X_test.shape"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 97,
+       "text": [
+        "(12456,)"
+       ]
+      }
+     ],
+     "prompt_number": 97
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 51
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
