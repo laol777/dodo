@@ -14,11 +14,11 @@ sample_submission.csv — пример оформления решения. Ф�
 	common.csv (key = ID, Date, Point, Count or NULL) // sort by Date
 /data_transform/
 	city.csv (key = Point, CityID, BranchNumber, OpenDate, LastDate)
-	date.csv (key = ID, Year, Month, YearDay, MonthDay, WeekDay, ThroughMonth, ThroughWeek, ThroughDay) 
-	target.csv (key = ID, Point, Count)
-	intrenal_features.csv (key = ID, MeanForThroughMonth, MeanForMonth, MeanForThroughWeek, MeanForWeek, MeanForWeekDay,  MeanForWeekDayByYear) 
+	date.csv (key = ID, Year, Month, YearDay, MonthDay, WeekDay, ThroughMonth, ThroughWeek, ThroughDay)
+	target.csv (key = ID, Point, Count, IsTrain, IsTest, IsValidation)
+	intrenal_features.csv (key = ID, MeanForThroughMonth, MeanForMonth, MeanForThroughWeek, MeanForWeek, MeanForWeekDay,  MeanForWeekDayByYear)
 	//MeanForThrough - сквозная нумерация от первой продажи (Ex: MeanForThroghMonth - среднее для каждого месяца, начиная с месяца первой продажи)
-	//MeanFor - нумерация внутри более высокой по иерархии сущности (Ex: MeanForMonth - среднее для конкретного числа по месяцам c начала года)  
+	//MeanFor - нумерация внутри более высокой по иерархии сущности (Ex: MeanForMonth - среднее для конкретного числа по месяцам c начала года)
 	extrenal_features.csv   
 
 ### Анализ:
@@ -34,7 +34,9 @@ sample_submission.csv — пример оформления решения. Ф�
 
 Попробовать модель ARIMA для предсказания каждного временного ряда
 
-Перепроверить вычиление средних
+Перепроверить вычиcление средних
+
+Для проверки качества модели сделаем отложенную выбоку, которая не будет участвовать в обучении
 
 ### Попробовать признаки
 
