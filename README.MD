@@ -92,3 +92,7 @@ https://habrahabr.ru/post/264653/
 [В комментах пример построения ансамбля](https://habrahabr.ru/post/270367/)
 
 [dirrec](https://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2006-77.pdf)
+
+https://www.analyticsvidhya.com/blog/2016/03/complete-guide-parameter-tuning-xgboost-with-codes-python/
+
+http://stats.stackexchange.com/questions/171043/how-to-tune-hyperparameters-of-xgboost-trees
