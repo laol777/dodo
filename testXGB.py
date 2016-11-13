@@ -12,7 +12,13 @@ remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName
 				 , 'MeanForThroughDay', 'MeanForMonthDayByPoints'
                  , 'MeanForThroughDayByPoints', 'MeanForThroughWeekByPoints'
                  , 'MeanForYearDayByPoints', u'Prev2Day', u'Prev3Day'
-                 , u'Next2Day', u'Next3Day']
+                 , u'Next2Day', u'Next3Day', 'NextExisting21Value'
+                 , 'PrevExisting21Value', 'NextExisting14Value'
+                 , 'PrevExisting14Value', 'NextExisting3Value'
+                 , 'PrevExisting3Value'
+                 , 'BranchNumber', 'MeanForMonth', 'Next1Day', 'Prev7Day'
+                 ]
+
 
 dataTrain = data[data.IsTrain == 1]
 dataTrain = dataTrain[dataTrain.columns.difference(remove_column)]
@@ -26,20 +32,23 @@ dataValidation = dataValidation[dataValidation.columns.difference(remove_column)
 X_test = dataValidation[dataValidation.columns.difference(['Count'])]
 y_test = dataValidation[['Count']]
 
+dataResult =  data[data.IsValidation == 1]
+dataResult = dataResult[dataResult.columns.difference(remove_column)]
+
+X_res = dataResult[dataResult.columns.difference(['Count'])]
+
 
 dtrain = xgb.DMatrix( X_train, label=y_train)
 dtest = xgb.DMatrix( X_test, label=y_test)
+dres = xgb.DMatrix( X_res )
 evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-param = {'max_depth': 7,
+param = {'max_depth': 6,
  		'silent': 1,
  		'eta': 0.01,
- 		'eval_metric': 'mae',
- 		'lambda': 20
+ 		'eval_metric': 'mae'
  }
 
-num_round = 5000
-bst = xgb.train( param, dtrain, num_round, evallist )
+num_round = 10000
 
-#predictions = bst.predict(dtest)
-#print mae(y_test, predictions)
+bst = xgb.train( param, dtrain, num_round, evallist)
