@@ -20,9 +20,9 @@ remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName
                  , 'BranchNumber', 'MeanForMonth', 'Next1Day', 'Prev7Day'
                  ]
 
-remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName'
-				, u'MeanForThroughWeekByPoints', u'MeanForYearDay', u'MeanForYearDayByPoints'
-                ]
+#remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName'
+#				, u'MeanForThroughWeekByPoints', u'MeanForYearDay', u'MeanForYearDayByPoints'
+#                ]
 
 
 dataTrain = data[data.IsTrain == 1]
@@ -48,7 +48,7 @@ dtest = xgb.DMatrix( X_test, label=y_test)
 dres = xgb.DMatrix( X_res )
 evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-param = {'max_depth': 7,
+param = {'max_depth': 6,
  		'silent': 1,
  		'eta': 0.01,
  		'eval_metric': 'mae'
