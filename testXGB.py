@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
-import xgboost as xgb
 from sklearn.metrics import mean_absolute_error as mae
-
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import RandomForestRegressor
+import xgboost as xgb
 
 features = pd.read_csv('data_transform/all.csv')
 
@@ -19,6 +20,10 @@ remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName
                  , 'BranchNumber', 'MeanForMonth', 'Next1Day', 'Prev7Day'
                  ]
 
+remove_column = ['IsTest', 'IsTrain', 'IsValidation', 'Date', 'Point', 'CityName'
+				, u'MeanForThroughWeekByPoints', u'MeanForYearDay', u'MeanForYearDayByPoints'
+                ]
+
 
 dataTrain = data[data.IsTrain == 1]
 dataTrain = dataTrain[dataTrain.columns.difference(remove_column)]
@@ -32,7 +37,7 @@ dataValidation = dataValidation[dataValidation.columns.difference(remove_column)
 X_test = dataValidation[dataValidation.columns.difference(['Count'])]
 y_test = dataValidation[['Count']]
 
-dataResult =  data[data.IsValidation == 1]
+dataResult =  data[data.IsTest == 1]
 dataResult = dataResult[dataResult.columns.difference(remove_column)]
 
 X_res = dataResult[dataResult.columns.difference(['Count'])]
@@ -43,7 +48,7 @@ dtest = xgb.DMatrix( X_test, label=y_test)
 dres = xgb.DMatrix( X_res )
 evallist  = [(dtest,'eval'), (dtrain,'train')]
 
-param = {'max_depth': 6,
+param = {'max_depth': 7,
  		'silent': 1,
  		'eta': 0.01,
  		'eval_metric': 'mae'
@@ -51,4 +56,7 @@ param = {'max_depth': 6,
 
 num_round = 10000
 
-bst = xgb.train( param, dtrain, num_round, evallist)
+bst = xgb.train( param, dtrain, num_round, evallist, verbose_eval=10 )
+
+
+result = bst.predict(dres)
